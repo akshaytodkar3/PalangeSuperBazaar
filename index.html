@@ -6,6 +6,7 @@
 <title>Palange Super Bazar — K M Palange &amp; Sons Since 1930</title>
 <meta name="description" content="Palange Super Bazar — Groceries, spices &amp; household essentials. K M Palange &amp; Sons, serving families since 1930.">
 <link rel="preload" href="assets/palange-logo.jpeg" as="image">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,6 +30,7 @@
 
   @media (max-width:880px){
     [data-r="nav"]       { padding:11px 16px !important; }
+    [data-r="nav"] nav   { gap:10px !important; }
     [data-navlink]       { display:none !important; }
     [data-nav-cta]       { white-space:nowrap; font-size:12px !important; padding:9px 13px !important; }
     [data-r="hero"]      { grid-template-columns:1fr !important; padding:104px 20px 50px !important; }
@@ -48,6 +50,7 @@
   @media (max-width:480px){
     [data-r="heroh1"]{ font-size:34px !important; }
     [data-r="scene"] { height:330px !important; }
+    [data-nav-sub]   { display:none !important; }
     [data-nav-cta]   { font-size:11px !important; padding:8px 10px !important; }
   }
 </style>
@@ -62,7 +65,7 @@
     </span>
     <span style="display:flex;flex-direction:column;line-height:1;">
       <span class="br-font" style="font-weight:800;font-size:18px;letter-spacing:0.5px;color:#fdf6e8;">PALANGE</span>
-      <span style="font-size:10px;letter-spacing:3.5px;color:#e9bd5a;font-weight:600;">SUPER BAZAR</span>
+      <span data-nav-sub style="font-size:10px;letter-spacing:3.5px;color:#e9bd5a;font-weight:600;">SUPER BAZAR</span>
     </span>
   </a>
   <nav style="display:flex;align-items:center;gap:26px;">
@@ -81,6 +84,7 @@
          background:radial-gradient(1200px 700px at 78% 18%,rgba(46,139,87,0.55),transparent 60%),
                     radial-gradient(900px 600px at 12% 90%,rgba(200,149,31,0.35),transparent 55%),
                     linear-gradient(160deg,#0d3b24 0%,#0a2d1c 55%,#0d3b24 100%);overflow:hidden;">
+  <canvas id="hero-bg" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.85;"></canvas>
   <div style="position:absolute;top:-80px;left:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(69,182,73,0.35),transparent 70%);filter:blur(10px);pointer-events:none;"></div>
   <div style="position:absolute;bottom:-120px;right:8%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(233,189,90,0.28),transparent 70%);pointer-events:none;"></div>
   <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:26px 26px;opacity:.5;pointer-events:none;"></div>
@@ -215,7 +219,7 @@
       </div>
       <div data-visit-btns style="display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;">
         <a href="https://maps.app.goo.gl/UCrDcmpdbWrYkLVy8" target="_blank" rel="noopener" id="btn-maps" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:linear-gradient(135deg,#45b649,#1f7a4d);color:#fff;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 12px 26px rgba(31,122,77,0.35);">&#128205; Open in Maps</a>
-        <a href="https://wa.me/918793838399" target="_blank" rel="noopener" id="btn-wa" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#fff;border:1.5px solid #1f7a4d;color:#1f7a4d;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;">&#128172; WhatsApp us</a>
+        <a href="https://wa.me/918793838399?text=Hello%20Palange%20Super%20Bazar!%20%F0%9F%99%8F%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more." target="_blank" rel="noopener" id="btn-wa" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#fff;border:1.5px solid #1f7a4d;color:#1f7a4d;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;">&#128172; WhatsApp us</a>
       </div>
     </div>
     <!-- Store-front illustration as map placeholder -->
@@ -244,7 +248,7 @@
         <div id="c-call"     style="font-weight:800;color:#fff;font-size:16px;margin-top:10px;">Call</div>
         <div id="c-call-num" style="font-size:14px;color:#9fb6a6;margin-top:4px;">+91 87938 38399</div>
       </a>
-      <a href="https://wa.me/918793838399" target="_blank" rel="noopener" data-tilt-card style="text-decoration:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:26px 18px;display:block;">
+      <a href="https://wa.me/918793838399?text=Hello%20Palange%20Super%20Bazar!%20%F0%9F%99%8F%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more." target="_blank" rel="noopener" data-tilt-card style="text-decoration:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:26px 18px;display:block;">
         <div style="font-size:30px;">&#128172;</div>
         <div id="c-wa"      style="font-weight:800;color:#fff;font-size:16px;margin-top:10px;">WhatsApp</div>
         <div id="c-wa-num"  style="font-size:14px;color:#9fb6a6;margin-top:4px;">+91 87938 38399</div>
@@ -315,15 +319,13 @@ var L = {
       { name:'Household', desc:'Cleaning, kitchen and home-care supplies for an easy-running home.',       items:['Detergents','Cleaners','Utensils','Toiletries'],           img:'assets/img-household.jpg' },
     ],
     hours:[
-      { day:'Monday – Saturday', time:'8:00 AM – 9:30 PM' },
-      { day:'Sunday',                 time:'9:00 AM – 8:00 PM' },
-      { day:'Public Holidays',        time:'9:00 AM – 1:00 PM' },
+      { day:'Every Day', time:'8:00 AM – 9:30 PM' },
     ],
     marquee:['FRESH GROCERIES','WHOLE SPICES','HOUSEHOLD ESSENTIALS','BEST DAILY PRICES','K M PALANGE &amp; SONS','SINCE 1930'],
   },
   mr: {
     nav_heritage:'वारसा', nav_dept:'विभाग', nav_visit:'भेट द्या', nav_cta:'दिशा मिळवा',
-    badge:'★ १९३४ पासून कुटुंबांची सेवा',
+    badge:'★ १९३० पासून कुटुंबांची सेवा',
     heroH1a:'तुमचा रोजचा बाजार,', heroH1b:'ताज्या मालाने भरलेला.',
     heroP1:'किराणा, मसाले आणि घरगुती जीवनावश्यक वस्तू एकाच छताखाली — ',
     brand:'के एम पलंगे अँड सन्स', heroP2:' · तीन पिढ्यांचा विश्वास.',
@@ -333,7 +335,7 @@ var L = {
     chip2T:'सर्वोत्तम किंमती', chip2S:'दररोज',
     chip3T:'अखंड मसाले', chip3S:'ताजे व सुगंधी',
     chip4:'घरगुती',
-    heritageLabel:'आमचा वारसा', heritageH1a:'कौटुंबिक बाजार,', heritageH1b:'१९३४ पासून.',
+    heritageLabel:'आमचा वारसा', heritageH1a:'कौटुंबिक बाजार,', heritageH1b:'१९३० पासून.',
     heritageP:'एका छोट्या कोपऱ्यावरच्या दुकानापासून सुरू झालेला हा प्रवास आज परिसरातील सर्वात आवडता सुपर बाजार बनला आहे. नव्वद वर्षांहून अधिक काळ पलंगे कुटुंब तुमच्या घरासाठी लागणार्या वस्तू त्याच योग्य किंमती आणि आपुलकीच्या सेवेने पुरवत आले आहे.',
     heritageCardSub:'आज तिसर्या पिढीकडून चालवला जातो',
     deptLabel:'आमच्याकडे काय आहे', deptH1a:'तुमच्या घराला हवं ते सर्व,', deptH1b:'एकाच छताखाली.',
@@ -345,10 +347,10 @@ var L = {
     contactH1a:'तुमचा कौटुंबिक बाजार', contactH1b:'अगदी जवळच आहे.',
     contactP:'फोन करा, संदेश पाठवा किंवा थेट या — आम्हाला मदत करायला आनंद होईल.',
     cCall:'फोन', cCallNum:'+91 87938 38399', cWA:'व्हॉट्सअँप', cWANum:'+91 87938 38399', cDir:'दिशा', cDirSub:'उंब्रज, सातारा',
-    footerSub:'के एम पलंगे अँड सन्स · १९३४ पासून',
-    footerRights:'© १९३४–७४७६ पलंगे सुपर बाजार. सर्व हक्क राखीव.',
+    footerSub:'के एम पलंगे अँड सन्स · १९३० पासून',
+    footerRights:'© १९३०–२०२६ पलंगे सुपर बाजार. सर्व हक्क राखीव.',
     timeline:[
-      { year:'१९३४',  title:'कोपऱ्यावरचे दुकान सुरू झाले',  body:'के एम पलंगे यांनी परिसरासाठी रोजच्या वस्तूंचा व्यापार सुरू केला.' },
+      { year:'१९३०',  title:'कोपऱ्यावरचे दुकान सुरू झाले',  body:'के एम पलंगे यांनी परिसरासाठी रोजच्या वस्तूंचा व्यापार सुरू केला.' },
       { year:'१९६४',  title:'पुढची पिढी',  body:'मुलं व्यवसायात आली आणि दरवर्षी माल वाढत गेला.' },
       { year:'१९९४',  title:'सुपर बाजार झाला',  body:'दुकान संपूर्ण कुटुंबासाठी सेल्फ-सर्व्हिस बाजारात विस्तारले.' },
       { year:'आज',  title:'तिसरी पिढी, तोच विश्वास',  body:'आधुनिक मांडणी, योग्य किंमती आणि नेहमीची आपुलकीची सेवा.' },
@@ -359,11 +361,9 @@ var L = {
       { name:'घरगुती', desc:'स्वच्छता, स्वयंपाकघर आणि घराची काळजी घेणार्या वस्तू.',  items:['साबण पावडर','क्लीनर','भांडी','स्नान साहित्य'],  img:'assets/img-household.jpg' },
     ],
     hours:[
-      { day:'सोमवार – शनिवार', time:'सकाळी ४:४४ – रात्री ९:३४' },
-      { day:'रविवार',    time:'सकाळी ९:४४ – रात्री ४:४४' },
-      { day:'सार्वजनिक सुट्ट्या', time:'सकाळी ९:४४ – दुपारी १:४४' },
+      { day:'दररोज', time:'सकाळी ८:०० – रात्री ९:३०' },
     ],
-    marquee:['ताजा किराणा','अखंड मसाले','घरगुती वस्तू','उत्तम रोजच्या किंमती','१९३४ पासून'],
+    marquee:['ताजा किराणा','अखंड मसाले','घरगुती वस्तू','उत्तम रोजच्या किंमती','१९३० पासून'],
   },
 };
 
@@ -589,6 +589,161 @@ document.addEventListener('DOMContentLoaded', function() {
   attachTilt(document);
   attachReveal(document);
 });
+</script>
+
+<script>
+// ─── THREE.JS HERO BACKGROUND ────────────────────────────────────────────────
+(function () {
+  if (typeof THREE === 'undefined') return;
+
+  var canvas  = document.getElementById('hero-bg');
+  var heroEl  = document.querySelector('[data-hero]');
+  if (!canvas || !heroEl) return;
+
+  var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  var scene  = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(55, 1, 0.1, 200);
+  camera.position.z = 38;
+
+  // ── PARTICLES ──────────────────────────────────────────────────────────────
+  var N   = 90;
+  var pos = new Float32Array(N * 3);
+  var vel = [];
+
+  for (var i = 0; i < N; i++) {
+    pos[i*3]   = (Math.random() - 0.5) * 90;
+    pos[i*3+1] = (Math.random() - 0.5) * 60;
+    pos[i*3+2] = (Math.random() - 0.5) * 28;
+    vel.push({
+      x: (Math.random() - 0.5) * 0.045,
+      y: (Math.random() - 0.5) * 0.045,
+      z: (Math.random() - 0.5) * 0.025
+    });
+  }
+
+  var ptGeo = new THREE.BufferGeometry();
+  ptGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  var ptMat = new THREE.PointsMaterial({ color: 0x45b649, size: 0.38, transparent: true, opacity: 0.85 });
+  scene.add(new THREE.Points(ptGeo, ptMat));
+
+  // ── WIREFRAME SHAPES ───────────────────────────────────────────────────────
+  var shapesDef = [
+    { geo: new THREE.IcosahedronGeometry(5.5, 1), col: 0xe9bd5a, p: [-22,  9, -10], r: [0.0018, 0.0040, 0.0010] },
+    { geo: new THREE.OctahedronGeometry(4),       col: 0x45b649, p: [ 24,-11,  -6], r: [0.0030, 0.0022, 0.0050] },
+    { geo: new THREE.TetrahedronGeometry(4.5),    col: 0xf0741e, p: [  4, 16, -14], r: [0.0012, 0.0060, 0.0020] },
+    { geo: new THREE.IcosahedronGeometry(3, 0),   col: 0x2ea84e, p: [-32,-13,  -7], r: [0.0040, 0.0010, 0.0030] },
+    { geo: new THREE.OctahedronGeometry(2.5),     col: 0xe9bd5a, p: [ 32, 12, -11], r: [0.0022, 0.0050, 0.0012] },
+    { geo: new THREE.IcosahedronGeometry(2, 1),   col: 0x45b649, p: [ 10,-18,  -5], r: [0.0035, 0.0015, 0.0045] },
+  ];
+
+  var wireMeshes = shapesDef.map(function (s) {
+    var wGeo  = new THREE.WireframeGeometry(s.geo);
+    var wMat  = new THREE.LineBasicMaterial({ color: s.col, transparent: true, opacity: 0.24 });
+    var mesh  = new THREE.LineSegments(wGeo, wMat);
+    mesh.position.set(s.p[0], s.p[1], s.p[2]);
+    mesh._rot = s.r;
+    scene.add(mesh);
+    return mesh;
+  });
+
+  // ── CONNECTION LINES ───────────────────────────────────────────────────────
+  var lineMat = new THREE.LineBasicMaterial({ color: 0x45b649, transparent: true, opacity: 0.18 });
+  var lineSegs = null;
+  var MAX_DIST_SQ = 11 * 11;
+
+  function updateLines() {
+    var lp = [];
+    for (var a = 0; a < N; a++) {
+      for (var b = a + 1; b < N; b++) {
+        var dx = pos[a*3]-pos[b*3], dy = pos[a*3+1]-pos[b*3+1], dz = pos[a*3+2]-pos[b*3+2];
+        if (dx*dx + dy*dy + dz*dz < MAX_DIST_SQ) {
+          lp.push(pos[a*3],pos[a*3+1],pos[a*3+2], pos[b*3],pos[b*3+1],pos[b*3+2]);
+        }
+      }
+    }
+    if (lineSegs) { scene.remove(lineSegs); lineSegs.geometry.dispose(); }
+    var lg = new THREE.BufferGeometry();
+    lg.setAttribute('position', new THREE.BufferAttribute(new Float32Array(lp), 3));
+    lineSegs = new THREE.LineSegments(lg, lineMat);
+    scene.add(lineSegs);
+  }
+
+  // ── RESIZE ─────────────────────────────────────────────────────────────────
+  function onResize() {
+    var w = heroEl.offsetWidth, h = heroEl.offsetHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', onResize);
+  onResize();
+
+  // ── MOUSE + GYRO PARALLAX ──────────────────────────────────────────────────
+  var mx = 0, my = 0;
+
+  // Desktop: mouse
+  document.addEventListener('mousemove', function (e) {
+    mx = e.clientX / window.innerWidth  - 0.5;
+    my = e.clientY / window.innerHeight - 0.5;
+  });
+
+  // Mobile: device orientation (gyroscope)
+  function startOrientation() {
+    window.addEventListener('deviceorientation', function (e) {
+      if (e.gamma !== null) mx = Math.max(-0.5, Math.min(0.5,  e.gamma / 35));
+      if (e.beta  !== null) my = Math.max(-0.5, Math.min(0.5, (e.beta - 45) / 35));
+    });
+  }
+
+  if (typeof DeviceOrientationEvent !== 'undefined') {
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      // iOS 13+ — needs a user gesture to grant permission
+      document.addEventListener('touchstart', function grantGyro() {
+        DeviceOrientationEvent.requestPermission()
+          .then(function (res) { if (res === 'granted') startOrientation(); })
+          .catch(function () {});
+        document.removeEventListener('touchstart', grantGyro);
+      }, { once: true });
+    } else {
+      // Android + older iOS — works without permission
+      startOrientation();
+    }
+  }
+
+  // ── ANIMATE ────────────────────────────────────────────────────────────────
+  var frame = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    frame++;
+
+    for (var i = 0; i < N; i++) {
+      pos[i*3]   += vel[i].x;
+      pos[i*3+1] += vel[i].y;
+      pos[i*3+2] += vel[i].z;
+      if (Math.abs(pos[i*3])   > 46) vel[i].x *= -1;
+      if (Math.abs(pos[i*3+1]) > 31) vel[i].y *= -1;
+      if (Math.abs(pos[i*3+2]) > 15) vel[i].z *= -1;
+    }
+    ptGeo.attributes.position.needsUpdate = true;
+
+    if (frame % 4 === 0) updateLines();
+
+    wireMeshes.forEach(function (m) {
+      m.rotation.x += m._rot[0];
+      m.rotation.y += m._rot[1];
+      m.rotation.z += m._rot[2];
+    });
+
+    camera.position.x += (mx * 5  - camera.position.x) * 0.04;
+    camera.position.y += (-my * 3 - camera.position.y) * 0.04;
+    camera.lookAt(0, 0, 0);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+}());
 </script>
 </body>
 </html>
