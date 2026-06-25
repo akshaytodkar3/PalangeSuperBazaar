@@ -571,19 +571,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
   render(currentLang);
 
-  // Hero scene mouse-tilt
+  // Hero scene tilt — mouse on desktop, gyro on mobile
   var hero  = document.querySelector('[data-hero]');
   var scene = document.querySelector('[data-scene]');
+  var sceneTiltX = 0, sceneTiltY = 0;
+
+  function applySceneTilt() {
+    if (scene) scene.style.transform = 'rotateY(' + sceneTiltX + 'deg) rotateX(' + sceneTiltY + 'deg)';
+  }
+
   if (hero && scene) {
+    // Desktop: mouse
     hero.addEventListener('mousemove', function(e) {
       var r  = hero.getBoundingClientRect();
       var px = (e.clientX - r.left) / r.width  - 0.5;
       var py = (e.clientY - r.top)  / r.height - 0.5;
-      scene.style.transform = 'rotateY(' + (px*14) + 'deg) rotateX(' + (-py*12) + 'deg)';
+      sceneTiltX =  px * 14;
+      sceneTiltY = -py * 12;
+      applySceneTilt();
     });
     hero.addEventListener('mouseleave', function() {
-      scene.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      sceneTiltX = 0; sceneTiltY = 0;
+      applySceneTilt();
     });
+
+    // Mobile: gyroscope
+    function startSceneGyro() {
+      window.addEventListener('deviceorientation', function(e) {
+        if (e.gamma !== null) sceneTiltX =  Math.max(-18, Math.min(18,  e.gamma / 3));
+        if (e.beta  !== null) sceneTiltY = -Math.max(-14, Math.min(14, (e.beta - 45) / 3));
+        applySceneTilt();
+      });
+    }
+
+    if (typeof DeviceOrientationEvent !== 'undefined') {
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        document.addEventListener('touchstart', function gyroScene() {
+          DeviceOrientationEvent.requestPermission()
+            .then(function(res) { if (res === 'granted') startSceneGyro(); })
+            .catch(function() {});
+          document.removeEventListener('touchstart', gyroScene);
+        }, { once: true });
+      } else {
+        startSceneGyro();
+      }
+    }
   }
 
   attachTilt(document);
