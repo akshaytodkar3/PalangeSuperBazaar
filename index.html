@@ -4,35 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Palange Super Bazar — K M Palange &amp; Sons Since 1930</title>
-<meta name="description" content="Palange Super Bazar — Your neighbourhood grocery, spices &amp; household essentials store. K M Palange &amp; Sons, serving families since 1930.">
+<meta name="description" content="Palange Super Bazar — Groceries, spices &amp; household essentials. K M Palange &amp; Sons, serving families since 1930.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
-  body { font-family:'Plus Jakarta Sans',sans-serif; background:#fbf6e8; color:#16241c; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body { font-family:'Plus Jakarta Sans','Mukta',sans-serif; background:#fbf6e8; color:#16241c; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
 
-  @keyframes floaty  { 0%,100%{ transform:translateY(0); }   50%{ transform:translateY(-14px); } }
-  @keyframes floaty2 { 0%,100%{ transform:translateY(0); }   50%{ transform:translateY(12px); } }
-  @keyframes spinslow{ from{ transform:rotate(0); }          to{ transform:rotate(360deg); } }
-  @keyframes marquee { from{ transform:translateX(0); }      to{ transform:translateX(-50%); } }
-  @keyframes pulseglow{ 0%,100%{ opacity:.55; }             50%{ opacity:.9; } }
-  @keyframes badgepop{ 0%{ transform:translateZ(40px) scale(.92); opacity:0; }
-                       100%{ transform:translateZ(40px) scale(1);  opacity:1; } }
+  @keyframes floaty   { 0%,100%{ transform:translateY(0);    } 50%{ transform:translateY(-14px); } }
+  @keyframes floaty2  { 0%,100%{ transform:translateY(0);    } 50%{ transform:translateY(12px);  } }
+  @keyframes spinslow { from{ transform:rotate(0); }           to{ transform:rotate(360deg); }     }
+  @keyframes marquee  { from{ transform:translateX(0); }       to{ transform:translateX(-50%); }   }
+  @keyframes pulseglow{ 0%,100%{ opacity:.55; }               50%{ opacity:.9; }                  }
+  @keyframes badgepop { 0%{ transform:translateZ(40px) scale(.92);opacity:0; }
+                        100%{ transform:translateZ(40px) scale(1); opacity:1; } }
+
+  .br-font { font-family:'Bricolage Grotesque','Baloo 2',sans-serif; }
+
+  /* tilt card hover — reset handled by JS */
+  [data-tilt-card] { transition:transform .25s ease, box-shadow .25s ease; }
 
   @media (max-width:880px){
-    [data-r="nav"]       { padding:11px 18px !important; }
-    [data-navlink]       { display:none !important; }
-    [data-r="hero"]      { grid-template-columns:1fr !important; padding:104px 20px 50px !important; }
-    [data-r="herocopy"]  { margin-left:auto !important; margin-right:auto !important; }
-    [data-r="heroh1"]    { font-size:42px !important; }
-    [data-r="stats"]     { justify-content:flex-start !important; flex-wrap:wrap !important; gap:22px !important; }
-    [data-r="scene"]     { height:420px !important; }
-    [data-r="sec"]       { padding:66px 20px !important; }
-    [data-r="grid2"]     { grid-template-columns:1fr !important; gap:34px !important; }
-    [data-r="grid3"]     { grid-template-columns:1fr !important; }
-    [data-r="h2"]        { font-size:32px !important; }
+    [data-r="nav"]     { padding:11px 16px !important; }
+    [data-navlink]     { display:none !important; }
+    [data-r="hero"]    { grid-template-columns:1fr !important; padding:104px 20px 50px !important; }
+    [data-r="herocopy"]{ margin-left:auto !important; margin-right:auto !important; }
+    [data-r="heroh1"]  { font-size:42px !important; }
+    [data-r="stats"]   { justify-content:flex-start !important; flex-wrap:wrap !important; gap:22px !important; }
+    [data-r="scene"]   { height:420px !important; }
+    [data-r="sec"]     { padding:66px 20px !important; }
+    [data-r="grid2"]   { grid-template-columns:1fr !important; gap:34px !important; }
+    [data-r="grid3"]   { grid-template-columns:1fr !important; }
+    [data-r="h2"]      { font-size:32px !important; }
+    [data-float]       { display:none !important; }
   }
   @media (max-width:480px){
     [data-r="heroh1"]{ font-size:34px !important; }
@@ -45,19 +51,21 @@
 <!-- ===== NAV ===== -->
 <header data-r="nav" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:14px 38px;backdrop-filter:blur(16px);background:rgba(11,40,25,0.72);border-bottom:1px solid rgba(232,189,90,0.22);">
   <a href="#top" style="display:flex;align-items:center;gap:13px;text-decoration:none;">
-    <span style="display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.35);overflow:hidden;">
+    <span style="display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fbf6e8;box-shadow:0 6px 18px rgba(0,0,0,0.35);overflow:hidden;">
       <img src="assets/palange-logo.jpeg" alt="Palange" style="width:118%;height:118%;object-fit:cover;">
     </span>
     <span style="display:flex;flex-direction:column;line-height:1;">
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;letter-spacing:0.5px;color:#fdf6e8;">PALANGE</span>
+      <span class="br-font" style="font-weight:800;font-size:18px;letter-spacing:0.5px;color:#fdf6e8;">PALANGE</span>
       <span style="font-size:10px;letter-spacing:3.5px;color:#e9bd5a;font-weight:600;">SUPER BAZAR</span>
     </span>
   </a>
-  <nav style="display:flex;align-items:center;gap:30px;">
-    <a href="#heritage" data-navlink style="text-decoration:none;color:#e7efe8;font-size:14px;font-weight:600;opacity:.85;">Heritage</a>
-    <a href="#shop"     data-navlink style="text-decoration:none;color:#e7efe8;font-size:14px;font-weight:600;opacity:.85;">Departments</a>
-    <a href="#visit"    data-navlink style="text-decoration:none;color:#e7efe8;font-size:14px;font-weight:600;opacity:.85;">Visit</a>
-    <a href="#contact"  style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:linear-gradient(135deg,#f0741e,#e9bd5a);color:#16241c;font-weight:700;font-size:14px;padding:11px 20px;border-radius:999px;box-shadow:0 8px 22px rgba(240,116,30,0.4);">Get Directions</a>
+  <nav style="display:flex;align-items:center;gap:26px;">
+    <a href="#heritage" data-navlink data-i18n="nav_heritage" style="text-decoration:none;color:#e7efe8;font-size:14px;font-weight:600;opacity:.85;">Heritage</a>
+    <a href="#shop"     data-navlink data-i18n="nav_dept"     style="text-decoration:none;color:#e7efe8;font-size:14px;font-weight:600;opacity:.85;">Departments</a>
+    <a href="#visit"    data-navlink data-i18n="nav_visit"    style="text-decoration:none;color:#e7efe8;font-size:14px;font-weight:600;opacity:.85;">Visit</a>
+    <!-- language toggle injected here by JS -->
+    <div id="lang-toggle" style="display:flex;align-items:center;background:rgba(255,255,255,0.08);border:1px solid rgba(233,189,90,0.4);border-radius:999px;padding:3px;"></div>
+    <a href="#contact" data-i18n="nav_cta" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:linear-gradient(135deg,#f0741e,#e9bd5a);color:#16241c;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px;box-shadow:0 8px 22px rgba(240,116,30,0.4);">Get Directions</a>
   </nav>
 </header>
 
@@ -67,79 +75,66 @@
          background:radial-gradient(1200px 700px at 78% 18%,rgba(46,139,87,0.55),transparent 60%),
                     radial-gradient(900px 600px at 12% 90%,rgba(200,149,31,0.35),transparent 55%),
                     linear-gradient(160deg,#0d3b24 0%,#0a2d1c 55%,#0d3b24 100%);overflow:hidden;">
-
-  <!-- decorative blobs -->
   <div style="position:absolute;top:-80px;left:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(69,182,73,0.35),transparent 70%);filter:blur(10px);pointer-events:none;"></div>
   <div style="position:absolute;bottom:-120px;right:8%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(233,189,90,0.28),transparent 70%);pointer-events:none;"></div>
   <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:26px 26px;opacity:.5;pointer-events:none;"></div>
 
   <!-- LEFT copy -->
   <div data-hero-copy data-r="herocopy" style="position:relative;z-index:3;max-width:600px;">
-    <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(233,189,90,0.14);border:1px solid rgba(233,189,90,0.4);color:#e9bd5a;font-weight:700;font-size:12.5px;letter-spacing:2px;padding:8px 16px;border-radius:999px;">&#9733; SERVING FAMILIES SINCE 1930</span>
-    <h1 data-r="heroh1" style="font-family:'Bricolage Grotesque';font-weight:800;color:#fdf6e8;font-size:74px;line-height:0.98;letter-spacing:-1.5px;margin-top:22px;">
-      Your daily bazaar,<br>
-      <span style="background:linear-gradient(120deg,#e9bd5a,#f0741e);-webkit-background-clip:text;background-clip:text;color:transparent;">freshly stocked.</span>
+    <span id="hero-badge" style="display:inline-flex;align-items:center;gap:9px;background:rgba(233,189,90,0.14);border:1px solid rgba(233,189,90,0.4);color:#e9bd5a;font-weight:700;font-size:12.5px;letter-spacing:1.5px;padding:8px 16px;border-radius:999px;">&#9733; SERVING FAMILIES SINCE 1930</span>
+    <h1 data-r="heroh1" class="br-font" style="font-weight:800;color:#fdf6e8;font-size:72px;line-height:1.0;letter-spacing:-1.5px;margin-top:22px;">
+      <span id="hero-h1a">Your daily bazaar,</span><br>
+      <span id="hero-h1b" style="background:linear-gradient(120deg,#e9bd5a,#f0741e);-webkit-background-clip:text;background-clip:text;color:transparent;">freshly stocked.</span>
     </h1>
-    <p style="margin-top:22px;font-size:18px;line-height:1.6;color:#cfe0d4;max-width:480px;">Groceries, spices &amp; household essentials under one roof — three generations of trust at <strong style="color:#fff;">K M Palange &amp; Sons</strong>.</p>
+    <p style="margin-top:22px;font-size:18px;line-height:1.6;color:#cfe0d4;max-width:490px;">
+      <span id="hero-p1">Groceries, spices &amp; household essentials under one roof — </span><strong id="hero-brand" style="color:#fff;">K M Palange &amp; Sons</strong><span id="hero-p2"> · three generations of trust.</span>
+    </p>
     <div style="display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;">
-      <a href="#visit" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:linear-gradient(135deg,#45b649,#1f7a4d);color:#fff;font-weight:700;font-size:16px;padding:16px 28px;border-radius:14px;box-shadow:0 14px 30px rgba(31,122,77,0.45);">Visit the store &rarr;</a>
-      <a href="#shop"  style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.22);color:#fdf6e8;font-weight:700;font-size:16px;padding:16px 28px;border-radius:14px;">Browse departments</a>
+      <a href="#visit" id="btn-visit" class="br-font" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:linear-gradient(135deg,#45b649,#1f7a4d);color:#fff;font-weight:700;font-size:17px;padding:16px 28px;border-radius:14px;box-shadow:0 14px 30px rgba(31,122,77,0.45);">Visit the store &#8594;</a>
+      <a href="#shop"  id="btn-browse" class="br-font" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.22);color:#fdf6e8;font-weight:700;font-size:17px;padding:16px 28px;border-radius:14px;">Browse departments</a>
     </div>
     <div data-r="stats" style="display:flex;gap:30px;margin-top:40px;">
-      <div><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;color:#e9bd5a;">90+</div><div style="font-size:13px;color:#9fb6a6;font-weight:600;">Years of trust</div></div>
+      <div><div id="stat-n1" class="br-font" style="font-weight:800;font-size:30px;color:#e9bd5a;">90+</div><div id="stat-l1" style="font-size:13px;color:#9fb6a6;font-weight:600;">Years of trust</div></div>
       <div style="width:1px;background:rgba(255,255,255,0.14);"></div>
-      <div><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;color:#e9bd5a;">3</div><div style="font-size:13px;color:#9fb6a6;font-weight:600;">Generations</div></div>
+      <div><div id="stat-n2" class="br-font" style="font-weight:800;font-size:30px;color:#e9bd5a;">3</div><div id="stat-l2" style="font-size:13px;color:#9fb6a6;font-weight:600;">Generations</div></div>
       <div style="width:1px;background:rgba(255,255,255,0.14);"></div>
-      <div><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;color:#e9bd5a;">1000s</div><div style="font-size:13px;color:#9fb6a6;font-weight:600;">Daily essentials</div></div>
+      <div><div id="stat-n3" class="br-font" style="font-weight:800;font-size:30px;color:#e9bd5a;">1000s</div><div id="stat-l3" style="font-size:13px;color:#9fb6a6;font-weight:600;">Daily essentials</div></div>
     </div>
   </div>
 
   <!-- RIGHT 3D scene -->
   <div data-scene-area data-r="scene" style="position:relative;z-index:2;height:560px;perspective:1300px;">
     <div data-scene style="position:absolute;inset:0;transform-style:preserve-3d;transition:transform .25s ease-out;display:grid;place-items:center;">
-      <!-- glow ring -->
       <div style="position:absolute;width:430px;height:430px;border-radius:50%;background:conic-gradient(from 0deg,#e9bd5a,#45b649,#f0741e,#e9bd5a);filter:blur(38px);opacity:.55;animation:pulseglow 5s ease-in-out infinite;transform:translateZ(-90px);"></div>
       <div style="position:absolute;width:400px;height:400px;border-radius:50%;border:2px dashed rgba(233,189,90,0.5);animation:spinslow 36s linear infinite;transform:translateZ(-40px);"></div>
-
       <!-- central badge — official KM Palange & Sons brand emblem -->
       <div style="position:relative;width:300px;height:300px;border-radius:50%;background:#fff;display:grid;place-items:center;
-                  box-shadow:0 40px 80px rgba(0,0,0,0.5),inset 0 0 0 8px rgba(200,149,31,0.18);
+                  box-shadow:0 40px 80px rgba(0,0,0,0.5),inset 0 0 0 8px rgba(200,149,31,0.2);
                   transform:translateZ(40px);overflow:hidden;animation:badgepop .8s ease-out both;">
-        <img src="assets/img-store-photo.jpeg" alt="K M Palange &amp; Sons" style="width:90%;height:90%;object-fit:contain;">
+        <img src="assets/img-store-photo.jpeg" alt="K M Palange &amp; Sons" style="width:88%;height:88%;object-fit:contain;">
       </div>
-
       <!-- floating chips -->
-      <div style="position:absolute;top:6%;left:-2%;transform:translateZ(110px);animation:floaty 5s ease-in-out infinite;">
+      <div data-float style="position:absolute;top:6%;left:-2%;transform:translateZ(110px);animation:floaty 5s ease-in-out infinite;">
         <div style="background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 20px 40px rgba(0,0,0,0.3);display:flex;align-items:center;gap:10px;">
-          <span style="width:38px;height:38px;border-radius:10px;overflow:hidden;flex:none;">
-            <img src="assets/img-groceries.png" style="width:100%;height:100%;object-fit:cover;object-position:top;" alt="">
-          </span>
-          <div><div style="font-weight:800;font-size:14px;color:#134e2c;font-family:'Bricolage Grotesque';">Daily Groceries</div><div style="font-size:11px;color:#7c8b80;">Atta &middot; Rice &middot; Oil</div></div>
+          <span style="width:38px;height:38px;border-radius:10px;flex:none;background:repeating-linear-gradient(45deg,#f3ead2,#f3ead2 6px,#e6dabb 6px,#e6dabb 12px);"></span>
+          <div><div id="chip1-t" class="br-font" style="font-weight:800;font-size:14px;color:#134e2c;">Daily Groceries</div><div id="chip1-s" style="font-size:11px;color:#7c8b80;">Atta · Rice · Oil</div></div>
         </div>
       </div>
-
-      <div style="position:absolute;bottom:9%;left:-6%;transform:translateZ(140px);animation:floaty2 6s ease-in-out infinite;">
+      <div data-float style="position:absolute;bottom:9%;left:-6%;transform:translateZ(140px);animation:floaty2 6s ease-in-out infinite;">
         <div style="background:linear-gradient(135deg,#f0741e,#e9bd5a);border-radius:16px;padding:14px 18px;box-shadow:0 22px 44px rgba(240,116,30,0.5);color:#16241c;">
-          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;line-height:1;">Best Prices</div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:1px;margin-top:3px;">EVERY SINGLE DAY</div>
+          <div id="chip2-t" class="br-font" style="font-weight:800;font-size:22px;line-height:1;">Best Prices</div>
+          <div id="chip2-s" style="font-size:11px;font-weight:700;letter-spacing:1px;margin-top:3px;">EVERY SINGLE DAY</div>
         </div>
       </div>
-
-      <div style="position:absolute;top:14%;right:-6%;transform:translateZ(130px);animation:floaty 7s ease-in-out infinite;">
+      <div data-float style="position:absolute;top:14%;right:-6%;transform:translateZ(130px);animation:floaty 7s ease-in-out infinite;">
         <div style="background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 20px 40px rgba(0,0,0,0.3);display:flex;align-items:center;gap:10px;">
-          <span style="width:38px;height:38px;border-radius:10px;overflow:hidden;flex:none;">
-            <img src="assets/img-spices.png" style="width:100%;height:100%;object-fit:cover;object-position:top;" alt="">
-          </span>
-          <div><div style="font-weight:800;font-size:14px;color:#134e2c;font-family:'Bricolage Grotesque';">Whole Spices</div><div style="font-size:11px;color:#7c8b80;">Fresh &amp; aromatic</div></div>
+          <span style="width:38px;height:38px;border-radius:10px;flex:none;background:repeating-linear-gradient(45deg,#fbe9c8,#fbe9c8 6px,#f2d9a4 6px,#f2d9a4 12px);"></span>
+          <div><div id="chip3-t" class="br-font" style="font-weight:800;font-size:14px;color:#134e2c;">Whole Spices</div><div id="chip3-s" style="font-size:11px;color:#7c8b80;">Fresh &amp; aromatic</div></div>
         </div>
       </div>
-
-      <div style="position:absolute;bottom:16%;right:-3%;transform:translateZ(100px);animation:floaty2 5.5s ease-in-out infinite;">
-        <div style="background:#134e2c;border-radius:14px;padding:11px 15px;box-shadow:0 18px 36px rgba(0,0,0,0.35);color:#fdf6e8;display:flex;align-items:center;gap:10px;">
-          <span style="width:28px;height:28px;border-radius:6px;overflow:hidden;flex:none;">
-            <img src="assets/img-household.png" style="width:100%;height:100%;object-fit:cover;object-position:top;" alt="">
-          </span>
-          <span style="font-weight:700;font-size:13px;">Household</span>
+      <div data-float style="position:absolute;bottom:16%;right:-3%;transform:translateZ(100px);animation:floaty2 5.5s ease-in-out infinite;">
+        <div style="background:#134e2c;border-radius:14px;padding:11px 15px;box-shadow:0 18px 36px rgba(0,0,0,0.35);color:#fdf6e8;display:flex;align-items:center;gap:8px;">
+          <span style="font-size:16px;">&#128722;</span><span id="chip4" style="font-weight:700;font-size:13px;">Household</span>
         </div>
       </div>
     </div>
@@ -148,67 +143,28 @@
 
 <!-- ===== MARQUEE ===== -->
 <div style="background:#134e2c;border-top:3px solid #e9bd5a;border-bottom:3px solid #e9bd5a;padding:16px 0;overflow:hidden;white-space:nowrap;">
-  <div style="display:inline-flex;gap:0;animation:marquee 28s linear infinite;">
-    <span style="display:inline-flex;align-items:center;">
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">FRESH GROCERIES</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">WHOLE SPICES</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">HOUSEHOLD ESSENTIALS</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">BEST DAILY PRICES</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">K M PALANGE &amp; SONS</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">SINCE 1930</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-    </span>
-    <!-- duplicate for seamless loop -->
-    <span style="display:inline-flex;align-items:center;">
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">FRESH GROCERIES</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">WHOLE SPICES</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">HOUSEHOLD ESSENTIALS</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">BEST DAILY PRICES</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">K M PALANGE &amp; SONS</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-      <span style="font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:2px;color:#fdf6e8;padding:0 26px;">SINCE 1930</span><span style="color:#e9bd5a;font-size:14px;">&#9670;</span>
-    </span>
-  </div>
+  <div id="marquee-track" style="display:inline-flex;animation:marquee 28s linear infinite;"></div>
 </div>
 
 <!-- ===== HERITAGE ===== -->
 <section id="heritage" data-r="sec" style="position:relative;padding:110px 38px;background:#fbf6e8;overflow:hidden;">
   <div style="position:absolute;top:40px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(200,149,31,0.16),transparent 70%);pointer-events:none;"></div>
   <div data-r="grid2" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;">
-
     <div data-reveal>
-      <span style="font-weight:800;font-size:13px;letter-spacing:3px;color:#c8951f;">OUR HERITAGE</span>
-      <h2 data-r="h2" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:48px;line-height:1.02;letter-spacing:-1px;color:#134e2c;margin-top:12px;">A family bazaar,<br>since 1930.</h2>
-      <p style="margin-top:20px;font-size:17px;line-height:1.7;color:#46584c;">What began as a humble corner shop has grown into the neighbourhood's most-loved super bazar. For over ninety years, the Palange family has stocked the shelves your family relies on — measured by the same promise of fair prices and a friendly face.</p>
-      <!-- brand emblem card -->
+      <span id="heritage-label" style="font-weight:800;font-size:13px;letter-spacing:2.5px;color:#c8951f;">OUR HERITAGE</span>
+      <h2 data-r="h2" class="br-font" style="font-weight:800;font-size:48px;line-height:1.05;letter-spacing:-1px;color:#134e2c;margin-top:12px;">
+        <span id="heritage-h1a">A family bazaar,</span><br><span id="heritage-h1b">since 1930.</span>
+      </h2>
+      <p id="heritage-p" style="margin-top:20px;font-size:17px;line-height:1.75;color:#46584c;">What began as a humble corner shop has grown into the neighbourhood's most-loved super bazar. For over ninety years, the Palange family has stocked the shelves your family relies on — measured by the same promise of fair prices and a friendly face.</p>
       <div style="display:flex;align-items:center;gap:14px;margin-top:28px;padding:18px 22px;background:#fff;border:1px solid #ece0c4;border-radius:16px;box-shadow:0 14px 34px rgba(19,78,44,0.08);max-width:400px;">
-        <span style="display:grid;place-items:center;width:64px;height:64px;border-radius:12px;background:#fdf6e8;border:1px solid #ece0c4;overflow:hidden;flex:none;">
-          <img src="assets/img-store-photo.jpeg" style="width:100%;height:100%;object-fit:contain;" alt="K M Palange &amp; Sons emblem">
+        <span style="display:grid;place-items:center;width:60px;height:60px;border-radius:12px;background:#fdf6e8;border:1px solid #ece0c4;overflow:hidden;flex:none;">
+          <img src="assets/img-store-photo.jpeg" style="width:100%;height:100%;object-fit:contain;" alt="">
         </span>
-        <div>
-          <div style="font-family:'Bricolage Grotesque';font-weight:800;color:#134e2c;font-size:17px;">K M Palange &amp; Sons</div>
-          <div style="font-size:13px;color:#7c8b80;">Run by the third generation today</div>
-        </div>
+        <div><div id="heritage-brand" class="br-font" style="font-weight:800;color:#134e2c;font-size:17px;">K M Palange &amp; Sons</div><div id="heritage-card-sub" style="font-size:13px;color:#7c8b80;">Run by the third generation today</div></div>
       </div>
     </div>
-
-    <!-- Timeline -->
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div data-reveal data-tilt-card style="position:relative;background:#fff;border-radius:18px;padding:24px 26px;border:1px solid #ece0c4;box-shadow:0 16px 38px rgba(19,78,44,0.08);display:flex;gap:22px;align-items:flex-start;transform-style:preserve-3d;transition:transform .2s ease,box-shadow .2s ease;">
-        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#c8951f;min-width:78px;transform:translateZ(30px);">1930</div>
-        <div style="transform:translateZ(18px);"><div style="font-weight:800;font-size:18px;color:#134e2c;font-family:'Bricolage Grotesque';">The corner shop opens</div><div style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:5px;">K M Palange begins trading daily essentials for the neighbourhood.</div></div>
-      </div>
-      <div data-reveal data-tilt-card style="position:relative;background:#fff;border-radius:18px;padding:24px 26px;border:1px solid #ece0c4;box-shadow:0 16px 38px rgba(19,78,44,0.08);display:flex;gap:22px;align-items:flex-start;transform-style:preserve-3d;transition:transform .2s ease,box-shadow .2s ease;">
-        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#c8951f;min-width:78px;transform:translateZ(30px);">1960s</div>
-        <div style="transform:translateZ(18px);"><div style="font-weight:800;font-size:18px;color:#134e2c;font-family:'Bricolage Grotesque';">The next generation</div><div style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:5px;">Sons join the business and the shelves keep growing year on year.</div></div>
-      </div>
-      <div data-reveal data-tilt-card style="position:relative;background:#fff;border-radius:18px;padding:24px 26px;border:1px solid #ece0c4;box-shadow:0 16px 38px rgba(19,78,44,0.08);display:flex;gap:22px;align-items:flex-start;transform-style:preserve-3d;transition:transform .2s ease,box-shadow .2s ease;">
-        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#c8951f;min-width:78px;transform:translateZ(30px);">1990s</div>
-        <div style="transform:translateZ(18px);"><div style="font-weight:800;font-size:18px;color:#134e2c;font-family:'Bricolage Grotesque';">Becomes a super bazar</div><div style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:5px;">The store expands into a full self-service bazaar for the whole family.</div></div>
-      </div>
-      <div data-reveal data-tilt-card style="position:relative;background:#fff;border-radius:18px;padding:24px 26px;border:1px solid #ece0c4;box-shadow:0 16px 38px rgba(19,78,44,0.08);display:flex;gap:22px;align-items:flex-start;transform-style:preserve-3d;transition:transform .2s ease,box-shadow .2s ease;">
-        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#c8951f;min-width:78px;transform:translateZ(30px);">Today</div>
-        <div style="transform:translateZ(18px);"><div style="font-weight:800;font-size:18px;color:#134e2c;font-family:'Bricolage Grotesque';">Third generation, same trust</div><div style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:5px;">Modern aisles, fair prices, and the warm service families have always known.</div></div>
-      </div>
-    </div>
+    <!-- Timeline dynamically rendered -->
+    <div id="timeline" style="display:flex;flex-direction:column;gap:16px;"></div>
   </div>
 </section>
 
@@ -216,109 +172,53 @@
 <section id="shop" data-r="sec" style="position:relative;padding:110px 38px;background:linear-gradient(180deg,#0d3b24,#0a2d1c);overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.045) 1px,transparent 1px);background-size:26px 26px;pointer-events:none;"></div>
   <div style="position:relative;max-width:1180px;margin:0 auto;">
-    <div data-reveal style="text-align:center;max-width:640px;margin:0 auto 56px;">
-      <span style="font-weight:800;font-size:13px;letter-spacing:3px;color:#e9bd5a;">WHAT WE STOCK</span>
-      <h2 data-r="h2" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:48px;line-height:1.04;letter-spacing:-1px;color:#fdf6e8;margin-top:12px;">Everything your home needs,<br>under one roof.</h2>
+    <div data-reveal style="text-align:center;max-width:660px;margin:0 auto 56px;">
+      <span id="dept-label" style="font-weight:800;font-size:13px;letter-spacing:2.5px;color:#e9bd5a;">WHAT WE STOCK</span>
+      <h2 data-r="h2" class="br-font" style="font-weight:800;font-size:48px;line-height:1.08;letter-spacing:-1px;color:#fdf6e8;margin-top:12px;">
+        <span id="dept-h1a">Everything your home needs,</span><br><span id="dept-h1b">under one roof.</span>
+      </h2>
     </div>
-    <div data-r="grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;">
-
-      <!-- Groceries -->
-      <div data-reveal data-tilt-card style="position:relative;background:#fbf6e8;border-radius:24px;overflow:hidden;border:1px solid rgba(233,189,90,0.3);box-shadow:0 26px 60px rgba(0,0,0,0.4);transform-style:preserve-3d;transition:transform .25s ease,box-shadow .25s ease;cursor:default;">
-        <div style="position:relative;height:220px;overflow:hidden;background:#1f7a4d;">
-          <img src="assets/img-groceries.png" alt="Groceries" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(10,45,28,0.55) 100%);"></div>
-          <span style="position:absolute;top:14px;left:14px;background:rgba(0,0,0,0.32);backdrop-filter:blur(6px);color:#fff;font-family:monospace;font-size:10px;letter-spacing:1px;padding:5px 10px;border-radius:6px;">GROCERIES</span>
-        </div>
-        <div style="padding:24px 24px 26px;">
-          <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:24px;color:#134e2c;">Groceries</h3>
-          <p style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:8px;">Pantry staples and daily provisions, freshly stocked and fairly priced.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;">
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Atta &amp; Rice</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Pulses</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Cooking Oil</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Tea &amp; Sugar</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Spices -->
-      <div data-reveal data-tilt-card style="position:relative;background:#fbf6e8;border-radius:24px;overflow:hidden;border:1px solid rgba(233,189,90,0.3);box-shadow:0 26px 60px rgba(0,0,0,0.4);transform-style:preserve-3d;transition:transform .25s ease,box-shadow .25s ease;cursor:default;">
-        <div style="position:relative;height:220px;overflow:hidden;background:#c8951f;">
-          <img src="assets/img-spices.png" alt="Spices" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(90,50,0,0.45) 100%);"></div>
-          <span style="position:absolute;top:14px;left:14px;background:rgba(0,0,0,0.32);backdrop-filter:blur(6px);color:#fff;font-family:monospace;font-size:10px;letter-spacing:1px;padding:5px 10px;border-radius:6px;">SPICES</span>
-        </div>
-        <div style="padding:24px 24px 26px;">
-          <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:24px;color:#134e2c;">Spices</h3>
-          <p style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:8px;">Whole and ground spices, aromatic and sourced for the Indian kitchen.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;">
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Turmeric</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Chilli</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Masalas</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Whole Spices</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Household -->
-      <div data-reveal data-tilt-card style="position:relative;background:#fbf6e8;border-radius:24px;overflow:hidden;border:1px solid rgba(233,189,90,0.3);box-shadow:0 26px 60px rgba(0,0,0,0.4);transform-style:preserve-3d;transition:transform .25s ease,box-shadow .25s ease;cursor:default;">
-        <div style="position:relative;height:220px;overflow:hidden;background:#0d3b24;">
-          <img src="assets/img-household.png" alt="Household" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(10,45,28,0.55) 100%);"></div>
-          <span style="position:absolute;top:14px;left:14px;background:rgba(0,0,0,0.32);backdrop-filter:blur(6px);color:#fff;font-family:monospace;font-size:10px;letter-spacing:1px;padding:5px 10px;border-radius:6px;">HOUSEHOLD</span>
-        </div>
-        <div style="padding:24px 24px 26px;">
-          <h3 style="font-family:'Bricolage Grotesque';font-weight:800;font-size:24px;color:#134e2c;">Household</h3>
-          <p style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:8px;">Cleaning, kitchen and home-care supplies for an easy-running home.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;">
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Detergents</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Cleaners</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Utensils</span>
-            <span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">Toiletries</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <!-- Department cards dynamically rendered -->
+    <div id="dept-grid" data-r="grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;"></div>
   </div>
 </section>
 
-<!-- ===== VISIT / LOCATION ===== -->
+<!-- ===== VISIT ===== -->
 <section id="visit" data-r="sec" style="position:relative;padding:110px 38px;background:#fbf6e8;overflow:hidden;">
   <div data-r="grid2" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:stretch;">
     <div data-reveal>
-      <span style="font-weight:800;font-size:13px;letter-spacing:3px;color:#c8951f;">VISIT US</span>
-      <h2 data-r="h2" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:46px;line-height:1.04;letter-spacing:-1px;color:#134e2c;margin-top:12px;">Come say hello<br>at the bazaar.</h2>
+      <span id="visit-label" style="font-weight:800;font-size:13px;letter-spacing:2.5px;color:#c8951f;">VISIT US</span>
+      <h2 data-r="h2" class="br-font" style="font-weight:800;font-size:46px;line-height:1.08;letter-spacing:-1px;color:#134e2c;margin-top:12px;">
+        <span id="visit-h1a">Come say hello</span><br><span id="visit-h1b">at the bazaar.</span>
+      </h2>
       <div style="margin-top:30px;display:flex;flex-direction:column;gap:18px;">
         <div style="display:flex;gap:16px;align-items:flex-start;">
           <span style="font-size:22px;flex:none;">&#128205;</span>
-          <div><div style="font-weight:800;color:#134e2c;font-size:16px;">Address</div><div style="font-size:15px;color:#5a6c5f;line-height:1.5;">Palange Super Bazar, Main Market Road,<br>[Area], [City] &mdash; [PIN]</div></div>
+          <div>
+            <div id="addr-label" style="font-weight:800;color:#134e2c;font-size:16px;">Address</div>
+            <div style="font-size:15px;color:#5a6c5f;line-height:1.5;"><span id="addr-l1">Palange Super Bazar, Main Market Road,</span><br><span id="addr-l2">[Area], [City] &mdash; [PIN]</span></div>
+          </div>
         </div>
         <div style="display:flex;gap:16px;align-items:flex-start;">
           <span style="font-size:22px;flex:none;">&#128337;</span>
           <div style="flex:1;">
-            <div style="font-weight:800;color:#134e2c;font-size:16px;margin-bottom:8px;">Store Hours</div>
-            <div style="display:flex;flex-direction:column;gap:6px;max-width:340px;">
-              <div style="display:flex;justify-content:space-between;font-size:14.5px;color:#5a6c5f;border-bottom:1px dashed #e0d4ba;padding-bottom:6px;"><span style="font-weight:600;">Monday &ndash; Saturday</span><span style="font-weight:700;color:#134e2c;">8:00 AM &ndash; 9:30 PM</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:14.5px;color:#5a6c5f;border-bottom:1px dashed #e0d4ba;padding-bottom:6px;"><span style="font-weight:600;">Sunday</span><span style="font-weight:700;color:#134e2c;">9:00 AM &ndash; 8:00 PM</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:14.5px;color:#5a6c5f;border-bottom:1px dashed #e0d4ba;padding-bottom:6px;"><span style="font-weight:600;">Public Holidays</span><span style="font-weight:700;color:#134e2c;">9:00 AM &ndash; 1:00 PM</span></div>
-            </div>
+            <div id="hours-label" style="font-weight:800;color:#134e2c;font-size:16px;margin-bottom:8px;">Store Hours</div>
+            <div id="hours-list" style="display:flex;flex-direction:column;gap:6px;max-width:360px;"></div>
           </div>
         </div>
       </div>
       <div style="display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;">
-        <a href="https://maps.google.com/?q=Palange+Super+Bazar" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:linear-gradient(135deg,#45b649,#1f7a4d);color:#fff;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 12px 26px rgba(31,122,77,0.35);">&#128205; Open in Maps</a>
-        <a href="https://wa.me/910000000000" target="_blank" rel="noopener"  style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#fff;border:1.5px solid #1f7a4d;color:#1f7a4d;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;">&#128172; WhatsApp us</a>
+        <a href="https://maps.app.goo.gl/UCrDcmpdbWrYkLVy8" target="_blank" rel="noopener" id="btn-maps" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:linear-gradient(135deg,#45b649,#1f7a4d);color:#fff;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 12px 26px rgba(31,122,77,0.35);">&#128205; Open in Maps</a>
+        <a href="https://wa.me/918793838399" target="_blank" rel="noopener" id="btn-wa" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#fff;border:1.5px solid #1f7a4d;color:#1f7a4d;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;">&#128172; WhatsApp us</a>
       </div>
     </div>
-
     <!-- Store-front illustration as map placeholder -->
     <div data-reveal style="position:relative;border-radius:24px;overflow:hidden;min-height:440px;border:1px solid #ece0c4;box-shadow:0 26px 60px rgba(19,78,44,0.14);">
       <img src="assets/img-store.png" alt="Palange Super Bazar store front" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(10,45,28,0.7) 100%);"></div>
-      <div style="position:absolute;bottom:0;left:0;right:0;padding:28px;">
-        <span style="display:inline-block;background:#134e2c;color:#fdf6e8;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 10px 22px rgba(0,0,0,0.3);">&#128205; Palange Super Bazar</span>
-        <div style="font-family:monospace;font-size:11px;color:rgba(255,255,255,0.6);margin-top:8px;">[ Add your Google Maps embed here ]</div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(10,45,28,0.72) 100%);"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:28px;display:flex;flex-direction:column;gap:8px;">
+        <span id="map-pill" style="display:inline-block;align-self:flex-start;background:#134e2c;color:#fdf6e8;font-weight:700;font-size:13px;padding:10px 18px;border-radius:999px;box-shadow:0 10px 22px rgba(0,0,0,0.3);">&#128205; Palange Super Bazar</span>
+        <span id="map-note" style="font-family:monospace;font-size:11px;color:rgba(255,255,255,0.55);"></span>
       </div>
     </div>
   </div>
@@ -328,23 +228,25 @@
 <section id="contact" data-r="sec" style="position:relative;padding:96px 38px;background:linear-gradient(135deg,#134e2c,#0a2d1c);overflow:hidden;">
   <div style="position:absolute;top:-60px;left:10%;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(233,189,90,0.22),transparent 70%);pointer-events:none;"></div>
   <div data-reveal style="position:relative;max-width:900px;margin:0 auto;text-align:center;">
-    <h2 data-r="h2" style="font-family:'Bricolage Grotesque';font-weight:800;font-size:52px;line-height:1.02;letter-spacing:-1px;color:#fdf6e8;">Your family bazaar<br>is just around the corner.</h2>
-    <p style="margin-top:18px;font-size:18px;color:#cfe0d4;">Call ahead, message us, or simply walk in &mdash; we're glad to help.</p>
+    <h2 data-r="h2" class="br-font" style="font-weight:800;font-size:52px;line-height:1.06;letter-spacing:-1px;color:#fdf6e8;">
+      <span id="contact-h1a">Your family bazaar</span><br><span id="contact-h1b">is just around the corner.</span>
+    </h2>
+    <p id="contact-p" style="margin-top:18px;font-size:18px;color:#cfe0d4;">Call ahead, message us, or simply walk in &mdash; we're glad to help.</p>
     <div data-r="grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;">
-      <a href="tel:+910000000000" data-tilt-card style="text-decoration:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:26px 18px;display:block;">
+      <a href="tel:+918793838399" data-tilt-card style="text-decoration:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:26px 18px;display:block;">
         <div style="font-size:30px;">&#128222;</div>
-        <div style="font-weight:800;color:#fff;font-size:16px;margin-top:10px;">Call</div>
-        <div style="font-size:14px;color:#9fb6a6;margin-top:4px;">+91 00000 00000</div>
+        <div id="c-call"     style="font-weight:800;color:#fff;font-size:16px;margin-top:10px;">Call</div>
+        <div id="c-call-num" style="font-size:14px;color:#9fb6a6;margin-top:4px;">+91 87938 38399</div>
       </a>
-      <a href="https://wa.me/910000000000" target="_blank" rel="noopener" data-tilt-card style="text-decoration:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:26px 18px;display:block;">
+      <a href="https://wa.me/918793838399" target="_blank" rel="noopener" data-tilt-card style="text-decoration:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:26px 18px;display:block;">
         <div style="font-size:30px;">&#128172;</div>
-        <div style="font-weight:800;color:#fff;font-size:16px;margin-top:10px;">WhatsApp</div>
-        <div style="font-size:14px;color:#9fb6a6;margin-top:4px;">+91 00000 00000</div>
+        <div id="c-wa"      style="font-weight:800;color:#fff;font-size:16px;margin-top:10px;">WhatsApp</div>
+        <div id="c-wa-num"  style="font-size:14px;color:#9fb6a6;margin-top:4px;">+91 87938 38399</div>
       </a>
-      <a href="https://maps.google.com/?q=Palange+Super+Bazar" target="_blank" rel="noopener" data-tilt-card style="text-decoration:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:26px 18px;display:block;">
+      <a href="https://maps.app.goo.gl/UCrDcmpdbWrYkLVy8" target="_blank" rel="noopener" data-tilt-card style="text-decoration:none;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:18px;padding:26px 18px;display:block;">
         <div style="font-size:30px;">&#128506;</div>
-        <div style="font-weight:800;color:#fff;font-size:16px;margin-top:10px;">Directions</div>
-        <div style="font-size:14px;color:#9fb6a6;margin-top:4px;">[City], India</div>
+        <div id="c-dir"     style="font-weight:800;color:#fff;font-size:16px;margin-top:10px;">Directions</div>
+        <div id="c-dir-sub" style="font-size:14px;color:#9fb6a6;margin-top:4px;">[City], India</div>
       </a>
     </div>
   </div>
@@ -354,45 +256,273 @@
 <footer style="background:#0a2d1c;padding:40px 38px;border-top:1px solid rgba(233,189,90,0.18);">
   <div style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;">
     <div style="display:flex;align-items:center;gap:14px;">
-      <span style="display:grid;place-items:center;width:48px;height:48px;border-radius:10px;background:#fff;overflow:hidden;border:1px solid rgba(233,189,90,0.3);">
+      <span style="display:grid;place-items:center;width:48px;height:48px;border-radius:10px;background:#fff;overflow:hidden;border:1px solid rgba(233,189,90,0.2);">
         <img src="assets/img-store-photo.jpeg" style="width:100%;height:100%;object-fit:contain;" alt="">
       </span>
       <div>
-        <div style="font-family:'Bricolage Grotesque';font-weight:800;color:#fdf6e8;font-size:15px;">PALANGE SUPER BAZAR</div>
-        <div style="font-size:11px;color:#7c9484;">K M Palange &amp; Sons &middot; Since 1930</div>
+        <div class="br-font" style="font-weight:800;color:#fdf6e8;font-size:15px;">PALANGE SUPER BAZAR</div>
+        <div id="footer-sub" style="font-size:11px;color:#7c9484;">K M Palange &amp; Sons · Since 1930</div>
       </div>
     </div>
-    <div style="font-size:13px;color:#7c9484;">&copy; 1930&ndash;2026 Palange Super Bazar. All rights reserved.</div>
+    <div id="footer-rights" style="font-size:13px;color:#7c9484;">&copy; 1930&ndash;2026 Palange Super Bazar. All rights reserved.</div>
   </div>
 </footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  var q  = function(s) { return document.querySelector(s); };
-  var qa = function(s) { return Array.from(document.querySelectorAll(s)); };
+// ─── TRANSLATIONS ────────────────────────────────────────────────────────────
+var L = {
+  en: {
+    nav_heritage:'Heritage', nav_dept:'Departments', nav_visit:'Visit', nav_cta:'Get Directions',
+    badge:'&#9733; SERVING FAMILIES SINCE 1930',
+    heroH1a:'Your daily bazaar,', heroH1b:'freshly stocked.',
+    heroP1:'Groceries, spices &amp; household essentials under one roof — ',
+    brand:'K M Palange &amp; Sons', heroP2:' · three generations of trust.',
+    btnVisit:'Visit the store →', btnBrowse:'Browse departments',
+    statN1:'90+', statL1:'Years of trust', statN2:'3', statL2:'Generations', statN3:'1000s', statL3:'Daily essentials',
+    chip1T:'Daily Groceries', chip1S:'Atta · Rice · Oil',
+    chip2T:'Best Prices', chip2S:'EVERY SINGLE DAY',
+    chip3T:'Whole Spices', chip3S:'Fresh &amp; aromatic',
+    chip4:'Household',
+    heritageLabel:'OUR HERITAGE', heritageH1a:'A family bazaar,', heritageH1b:'since 1930.',
+    heritageP:"What began as a humble corner shop has grown into the neighbourhood’s most-loved super bazar. For over ninety years, the Palange family has stocked the shelves your family relies on — measured by the same promise of fair prices and a friendly face.",
+    heritageCardSub:'Run by the third generation today',
+    deptLabel:'WHAT WE STOCK', deptH1a:'Everything your home needs,', deptH1b:'under one roof.',
+    visitLabel:'VISIT US', visitH1a:'Come say hello', visitH1b:'at the bazaar.',
+    addrLabel:'Address', addrL1:'Palange Super Bazar, Main Market Road,', addrL2:'[Area], [City] — [PIN]',
+    hoursLabel:'Store Hours',
+    btnMaps:'&#128205; Open in Maps', btnWA:'&#128172; WhatsApp us',
+    mapPill:'&#128205; Palange Super Bazar', mapNote:'',
+    contactH1a:'Your family bazaar', contactH1b:'is just around the corner.',
+    contactP:"Call ahead, message us, or simply walk in — we’re glad to help.",
+    cCall:'Call', cCallNum:'+91 87938 38399', cWA:'WhatsApp', cWANum:'+91 87938 38399', cDir:'Directions', cDirSub:'Umbraj, India',
+    footerSub:'K M Palange &amp; Sons · Since 1930',
+    footerRights:'© 1930–2026 Palange Super Bazar. All rights reserved.',
+    timeline:[
+      { year:'1930',  title:'The corner shop opens',      body:'K M Palange begins trading daily essentials for the neighbourhood.' },
+      { year:'1960s', title:'The next generation',        body:'Sons join the business and the shelves keep growing year on year.' },
+      { year:'1990s', title:'Becomes a super bazar',      body:'The store expands into a full self-service bazaar for the whole family.' },
+      { year:'Today', title:'Third generation, same trust',body:'Modern aisles, fair prices, and the warm service families have always known.' },
+    ],
+    depts:[
+      { name:'Groceries', desc:'Pantry staples and daily provisions, freshly stocked and fairly priced.',  items:['Atta &amp; Rice','Pulses','Cooking Oil','Tea &amp; Sugar'], img:'assets/img-groceries.jpeg' },
+      { name:'Spices',    desc:'Whole and ground spices, aromatic and sourced for the Indian kitchen.',    items:['Turmeric','Chilli','Masalas','Whole Spices'],              img:'assets/img-spices.jpg'    },
+      { name:'Household', desc:'Cleaning, kitchen and home-care supplies for an easy-running home.',       items:['Detergents','Cleaners','Utensils','Toiletries'],           img:'assets/img-household.jpg' },
+    ],
+    hours:[
+      { day:'Monday – Saturday', time:'8:00 AM – 9:30 PM' },
+      { day:'Sunday',                 time:'9:00 AM – 8:00 PM' },
+      { day:'Public Holidays',        time:'9:00 AM – 1:00 PM' },
+    ],
+    marquee:['FRESH GROCERIES','WHOLE SPICES','HOUSEHOLD ESSENTIALS','BEST DAILY PRICES','K M PALANGE &amp; SONS','SINCE 1930'],
+  },
+  mr: {
+    nav_heritage:'वारसा', nav_dept:'विभाग', nav_visit:'भेट द्या', nav_cta:'दिशा मिळवा',
+    badge:'★ १९३४ पासून कुटुंबांची सेवा',
+    heroH1a:'तुमचा रोजचा बाजार,', heroH1b:'ताज्या मालाने भरलेला.',
+    heroP1:'किराणा, मसाले आणि घरगुती जीवनावश्यक वस्तू एकाच छताखाली — ',
+    brand:'के एम पलंगे अँड सन्स', heroP2:' · तीन पिढ्यांचा विश्वास.',
+    btnVisit:'दुकानाला भेट द्या →', btnBrowse:'विभाग पाहा',
+    statN1:'९४+', statL1:'विश्वासाची वर्षे', statN2:'३', statL2:'पिढ्या', statN3:'हजारो', statL3:'रोजच्या वस्तू',
+    chip1T:'रोजचा किराणा', chip1S:'पीठ · तांदूळ · तेल',
+    chip2T:'सर्वोत्तम किंमती', chip2S:'दररोज',
+    chip3T:'अखंड मसाले', chip3S:'ताजे व सुगंधी',
+    chip4:'घरगुती',
+    heritageLabel:'आमचा वारसा', heritageH1a:'कौटुंबिक बाजार,', heritageH1b:'१९३४ पासून.',
+    heritageP:'एका छोट्या कोपऱ्यावरच्या दुकानापासून सुरू झालेला हा प्रवास आज परिसरातील सर्वात आवडता सुपर बाजार बनला आहे. नव्वद वर्षांहून अधिक काळ पलंगे कुटुंब तुमच्या घरासाठी लागणार्या वस्तू त्याच योग्य किंमती आणि आपुलकीच्या सेवेने पुरवत आले आहे.',
+    heritageCardSub:'आज तिसर्या पिढीकडून चालवला जातो',
+    deptLabel:'आमच्याकडे काय आहे', deptH1a:'तुमच्या घराला हवं ते सर्व,', deptH1b:'एकाच छताखाली.',
+    visitLabel:'आम्हाला भेट द्या', visitH1a:'बाजारात येउन', visitH1b:'आम्हाला भेटा.',
+    addrLabel:'पत्ता', addrL1:'पलंगे सुपर बाजार, मेन मार्केट रोड,', addrL2:'[परिसर], [शहर] — [पिन]',
+    hoursLabel:'दुकानाच्या वेळा',
+    btnMaps:'&#128205; नकाशावर पाहा', btnWA:'&#128172; व्हॉट्सअँप करा',
+    mapPill:'&#128205; पलंगे सुपर बाजार', mapNote:'',
+    contactH1a:'तुमचा कौटुंबिक बाजार', contactH1b:'अगदी जवळच आहे.',
+    contactP:'फोन करा, संदेश पाठवा किंवा थेट या — आम्हाला मदत करायला आनंद होईल.',
+    cCall:'फोन', cCallNum:'+91 87938 38399', cWA:'व्हॉट्सअँप', cWANum:'+91 87938 38399', cDir:'दिशा', cDirSub:'उंब्रज, भारत',
+    footerSub:'के एम पलंगे अँड सन्स · १९३४ पासून',
+    footerRights:'© १९३४–७४७६ पलंगे सुपर बाजार. सर्व हक्क राखीव.',
+    timeline:[
+      { year:'१९३४',  title:'कोपऱ्यावरचे दुकान सुरू झाले',  body:'के एम पलंगे यांनी परिसरासाठी रोजच्या वस्तूंचा व्यापार सुरू केला.' },
+      { year:'१९६४',  title:'पुढची पिढी',  body:'मुलं व्यवसायात आली आणि दरवर्षी माल वाढत गेला.' },
+      { year:'१९९४',  title:'सुपर बाजार झाला',  body:'दुकान संपूर्ण कुटुंबासाठी सेल्फ-सर्व्हिस बाजारात विस्तारले.' },
+      { year:'आज',  title:'तिसरी पिढी, तोच विश्वास',  body:'आधुनिक मांडणी, योग्य किंमती आणि नेहमीची आपुलकीची सेवा.' },
+    ],
+    depts:[
+      { name:'किराणा', desc:'रोजच्या वापरातील वस्तू, ताज्या आणि योग्य किंमतीत.',  items:['पीठ व तांदूळ','डाळी','खाद्यतेल','चहा व साखर'],  img:'assets/img-groceries.jpeg' },
+      { name:'मसाले', desc:'अखंड व दळलेले मसाले, सुगंधी आणि भारतीय स्वयंपाकासाठी.',  items:['हळद','तिखट','मसाले','अखंड मसाले'],  img:'assets/img-spices.jpg' },
+      { name:'घरगुती', desc:'स्वच्छता, स्वयंपाकघर आणि घराची काळजी घेणार्या वस्तू.',  items:['साबण पावडर','क्लीनर','भांडी','स्नान साहित्य'],  img:'assets/img-household.jpg' },
+    ],
+    hours:[
+      { day:'सोमवार – शनिवार', time:'सकाळी ४:४४ – रात्री ९:३४' },
+      { day:'रविवार',    time:'सकाळी ९:४४ – रात्री ४:४४' },
+      { day:'सार्वजनिक सुट्ट्या', time:'सकाळी ९:४४ – दुपारी १:४४' },
+    ],
+    marquee:['ताजा किराणा','अखंड मसाले','घरगुती वस्तू','उत्तम रोजच्या किंमती','१९३४ पासून'],
+  },
+};
 
-  // Hero scene mouse-tilt
-  var hero  = q('[data-hero]');
-  var scene = q('[data-scene]');
-  if (hero && scene) {
-    hero.addEventListener('mousemove', function(e) {
-      var r  = hero.getBoundingClientRect();
-      var px = (e.clientX - r.left)  / r.width  - 0.5;
-      var py = (e.clientY - r.top)   / r.height - 0.5;
-      scene.style.transform = 'rotateY(' + (px * 14) + 'deg) rotateX(' + (-py * 12) + 'deg)';
-    });
-    hero.addEventListener('mouseleave', function() {
-      scene.style.transform = 'rotateY(0deg) rotateX(0deg)';
-    });
-  }
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+var currentLang = 'en';
 
-  // Per-card 3D tilt + lift
-  qa('[data-tilt-card]').forEach(function(card) {
+function setInnerHTML(id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; }
+function setText(id, text)      { var el = document.getElementById(id); if (el) el.textContent = text; }
+
+function buildMarquee(items) {
+  var block = items.map(function(t) {
+    return '<span style="font-family:\'Bricolage Grotesque\',\'Baloo 2\',sans-serif;font-weight:800;font-size:17px;letter-spacing:1.5px;color:#fdf6e8;padding:0 26px;">' + t + '</span>' +
+           '<span style="color:#e9bd5a;font-size:14px;">&#9670;</span>';
+  }).join('');
+  return block + block; // duplicate for seamless loop
+}
+
+function buildTimeline(items) {
+  return items.map(function(item) {
+    return '<div data-reveal data-tilt-card style="position:relative;background:#fff;border-radius:18px;padding:24px 26px;border:1px solid #ece0c4;box-shadow:0 16px 38px rgba(19,78,44,0.08);display:flex;gap:22px;align-items:flex-start;transform-style:preserve-3d;transition:transform .2s ease,box-shadow .2s ease;">' +
+      '<div style="font-family:\'Bricolage Grotesque\',\'Baloo 2\',sans-serif;font-weight:800;font-size:30px;color:#c8951f;min-width:96px;transform:translateZ(30px);">' + item.year + '</div>' +
+      '<div style="transform:translateZ(18px);"><div style="font-family:\'Bricolage Grotesque\',\'Baloo 2\',sans-serif;font-weight:800;font-size:18px;color:#134e2c;">' + item.title + '</div>' +
+      '<div style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:5px;">' + item.body + '</div></div>' +
+      '</div>';
+  }).join('');
+}
+
+function buildDepts(items) {
+  return items.map(function(d) {
+    var tags = d.items.map(function(it) {
+      return '<span style="font-size:12px;font-weight:600;color:#1f7a4d;background:rgba(31,122,77,0.1);border:1px solid rgba(31,122,77,0.2);padding:5px 11px;border-radius:999px;">' + it + '</span>';
+    }).join('');
+    return '<div data-reveal data-tilt-card style="position:relative;background:#fbf6e8;border-radius:24px;overflow:hidden;border:1px solid rgba(233,189,90,0.3);box-shadow:0 26px 60px rgba(0,0,0,0.4);transform-style:preserve-3d;transition:transform .25s ease,box-shadow .25s ease;cursor:default;">' +
+      '<div style="position:relative;height:200px;overflow:hidden;background:#1f7a4d;background-size:cover;background-position:center top;background-image:url(\'' + d.img + '\');">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(10,45,28,0.5) 100%);"></div>' +
+        '<span style="position:absolute;top:14px;left:14px;background:rgba(0,0,0,0.32);backdrop-filter:blur(6px);color:#fff;font-family:monospace;font-size:10px;letter-spacing:1px;padding:5px 10px;border-radius:6px;">' + d.name.toUpperCase() + '</span>' +
+      '</div>' +
+      '<div style="padding:24px 24px 26px;">' +
+        '<h3 style="font-family:\'Bricolage Grotesque\',\'Baloo 2\',sans-serif;font-weight:800;font-size:24px;color:#134e2c;">' + d.name + '</h3>' +
+        '<p style="font-size:14.5px;color:#5a6c5f;line-height:1.55;margin-top:8px;">' + d.desc + '</p>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;">' + tags + '</div>' +
+      '</div></div>';
+  }).join('');
+}
+
+function buildHours(items) {
+  return items.map(function(h) {
+    return '<div style="display:flex;justify-content:space-between;gap:14px;font-size:14.5px;color:#5a6c5f;border-bottom:1px dashed #e0d4ba;padding-bottom:6px;">' +
+      '<span style="font-weight:600;">' + h.day + '</span>' +
+      '<span style="font-weight:700;color:#134e2c;white-space:nowrap;">' + h.time + '</span></div>';
+  }).join('');
+}
+
+function render(lang) {
+  var t = L[lang];
+
+  // nav links
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // hero
+  setInnerHTML('hero-badge',  t.badge);
+  setInnerHTML('hero-h1a',    t.heroH1a);
+  setInnerHTML('hero-h1b',    t.heroH1b);
+  setInnerHTML('hero-p1',     t.heroP1);
+  setInnerHTML('hero-brand',  t.brand);
+  setInnerHTML('hero-p2',     t.heroP2);
+  setInnerHTML('btn-visit',   t.btnVisit);
+  setInnerHTML('btn-browse',  t.btnBrowse);
+  setInnerHTML('stat-n1', t.statN1); setInnerHTML('stat-l1', t.statL1);
+  setInnerHTML('stat-n2', t.statN2); setInnerHTML('stat-l2', t.statL2);
+  setInnerHTML('stat-n3', t.statN3); setInnerHTML('stat-l3', t.statL3);
+  setInnerHTML('chip1-t', t.chip1T); setInnerHTML('chip1-s', t.chip1S);
+  setInnerHTML('chip2-t', t.chip2T); setInnerHTML('chip2-s', t.chip2S);
+  setInnerHTML('chip3-t', t.chip3T); setInnerHTML('chip3-s', t.chip3S);
+  setInnerHTML('chip4',   t.chip4);
+
+  // marquee
+  var track = document.getElementById('marquee-track');
+  if (track) track.innerHTML = buildMarquee(t.marquee);
+
+  // heritage
+  setInnerHTML('heritage-label',    t.heritageLabel);
+  setInnerHTML('heritage-h1a',      t.heritageH1a);
+  setInnerHTML('heritage-h1b',      t.heritageH1b);
+  setInnerHTML('heritage-p',        t.heritageP);
+  setInnerHTML('heritage-brand',    t.brand);
+  setInnerHTML('heritage-card-sub', t.heritageCardSub);
+  var tlEl = document.getElementById('timeline');
+  if (tlEl) { tlEl.innerHTML = buildTimeline(t.timeline); attachTilt(tlEl); attachReveal(tlEl); }
+
+  // departments
+  setInnerHTML('dept-label', t.deptLabel);
+  setInnerHTML('dept-h1a',   t.deptH1a);
+  setInnerHTML('dept-h1b',   t.deptH1b);
+  var deptEl = document.getElementById('dept-grid');
+  if (deptEl) { deptEl.innerHTML = buildDepts(t.depts); attachTilt(deptEl); attachReveal(deptEl); }
+
+  // visit
+  setInnerHTML('visit-label',  t.visitLabel);
+  setInnerHTML('visit-h1a',    t.visitH1a);
+  setInnerHTML('visit-h1b',    t.visitH1b);
+  setInnerHTML('addr-label',   t.addrLabel);
+  setInnerHTML('addr-l1',      t.addrL1);
+  setInnerHTML('addr-l2',      t.addrL2);
+  setInnerHTML('hours-label',  t.hoursLabel);
+  var hoursEl = document.getElementById('hours-list');
+  if (hoursEl) hoursEl.innerHTML = buildHours(t.hours);
+  setInnerHTML('btn-maps',  t.btnMaps);
+  setInnerHTML('btn-wa',    t.btnWA);
+  setInnerHTML('map-pill',  t.mapPill);
+  setInnerHTML('map-note',  t.mapNote);
+
+  // contact
+  setInnerHTML('contact-h1a', t.contactH1a);
+  setInnerHTML('contact-h1b', t.contactH1b);
+  setInnerHTML('contact-p',   t.contactP);
+  setInnerHTML('c-call',     t.cCall);    setInnerHTML('c-call-num', t.cCallNum);
+  setInnerHTML('c-wa',       t.cWA);      setInnerHTML('c-wa-num',   t.cWANum);
+  setInnerHTML('c-dir',      t.cDir);     setInnerHTML('c-dir-sub',  t.cDirSub);
+
+  // footer
+  setInnerHTML('footer-sub',    t.footerSub);
+  setInnerHTML('footer-rights', t.footerRights);
+
+  // lang toggle button states
+  document.querySelectorAll('[data-lang-btn]').forEach(function(btn) {
+    var active = btn.getAttribute('data-lang-btn') === lang;
+    btn.style.background = active ? '#e9bd5a' : 'transparent';
+    btn.style.color      = active ? '#16241c' : '#cfe0d4';
+  });
+}
+
+// ─── LANGUAGE TOGGLE ─────────────────────────────────────────────────────────
+function setLang(lang) {
+  currentLang = lang;
+  try { localStorage.setItem('palange_lang', lang); } catch(e) {}
+  render(lang);
+}
+
+function buildLangToggle() {
+  var wrap = document.getElementById('lang-toggle');
+  if (!wrap) return;
+  [['en','EN'],['mr','मराठी']].forEach(function(pair) {
+    var btn = document.createElement('button');
+    btn.setAttribute('data-lang-btn', pair[0]);
+    btn.textContent = pair[1];
+    btn.style.cssText = 'border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:13px;padding:7px 13px;border-radius:999px;transition:all .18s ease;background:transparent;color:#cfe0d4;';
+    btn.addEventListener('click', function() { setLang(pair[0]); });
+    wrap.appendChild(btn);
+  });
+}
+
+// ─── INTERACTIONS ─────────────────────────────────────────────────────────────
+function attachTilt(root) {
+  (root || document).querySelectorAll('[data-tilt-card]').forEach(function(card) {
+    if (card._tilt) return;
+    card._tilt = true;
     card.addEventListener('mousemove', function(e) {
-      var r  = card.getBoundingClientRect();
+      var r = card.getBoundingClientRect();
       var px = (e.clientX - r.left) / r.width  - 0.5;
       var py = (e.clientY - r.top)  / r.height - 0.5;
-      card.style.transform  = 'perspective(900px) rotateY(' + (px * 9) + 'deg) rotateX(' + (-py * 9) + 'deg) translateY(-6px)';
+      card.style.transform  = 'perspective(900px) rotateY(' + (px*9) + 'deg) rotateX(' + (-py*9) + 'deg) translateY(-6px)';
       card.style.boxShadow  = '0 34px 70px rgba(0,0,0,0.28)';
     });
     card.addEventListener('mouseleave', function() {
@@ -400,24 +530,58 @@ document.addEventListener('DOMContentLoaded', function () {
       card.style.boxShadow = '';
     });
   });
+}
 
-  // Scroll reveal
-  var reveals = qa('[data-reveal]');
-  reveals.forEach(function(el) {
+function attachReveal(root) {
+  (root || document).querySelectorAll('[data-reveal]').forEach(function(el) {
+    if (el._revealed || el._observed) return;
+    el._observed = true;
     el.style.opacity   = '0';
     el.style.transform = 'translateY(34px)';
     el.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)';
+    revealObserver.observe(el);
   });
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(en) {
-      if (en.isIntersecting) {
-        en.target.style.opacity   = '1';
-        en.target.style.transform = 'translateY(0)';
-        io.unobserve(en.target);
-      }
+}
+
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(en) {
+    if (en.isIntersecting) {
+      en.target.style.opacity   = '1';
+      en.target.style.transform = 'translateY(0)';
+      en.target._revealed = true;
+      revealObserver.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+// ─── BOOT ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  buildLangToggle();
+
+  var saved = 'en';
+  try { saved = localStorage.getItem('palange_lang') || 'en'; } catch(e) {}
+  if (!L[saved]) saved = 'en';
+  currentLang = saved;
+
+  render(currentLang);
+
+  // Hero scene mouse-tilt
+  var hero  = document.querySelector('[data-hero]');
+  var scene = document.querySelector('[data-scene]');
+  if (hero && scene) {
+    hero.addEventListener('mousemove', function(e) {
+      var r  = hero.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width  - 0.5;
+      var py = (e.clientY - r.top)  / r.height - 0.5;
+      scene.style.transform = 'rotateY(' + (px*14) + 'deg) rotateX(' + (-py*12) + 'deg)';
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(function(el) { io.observe(el); });
+    hero.addEventListener('mouseleave', function() {
+      scene.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
+
+  attachTilt(document);
+  attachReveal(document);
 });
 </script>
 </body>
