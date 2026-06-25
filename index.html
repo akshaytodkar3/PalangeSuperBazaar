@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Palange Super Bazar — K M Palange &amp; Sons Since 1930</title>
 <meta name="description" content="Palange Super Bazar — Groceries, spices &amp; household essentials. K M Palange &amp; Sons, serving families since 1930.">
+<link rel="preload" href="assets/palange-logo.jpeg" as="image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,22 +28,27 @@
   [data-tilt-card] { transition:transform .25s ease, box-shadow .25s ease; }
 
   @media (max-width:880px){
-    [data-r="nav"]     { padding:11px 16px !important; }
-    [data-navlink]     { display:none !important; }
-    [data-r="hero"]    { grid-template-columns:1fr !important; padding:104px 20px 50px !important; }
-    [data-r="herocopy"]{ margin-left:auto !important; margin-right:auto !important; }
-    [data-r="heroh1"]  { font-size:42px !important; }
-    [data-r="stats"]   { justify-content:flex-start !important; flex-wrap:wrap !important; gap:22px !important; }
-    [data-r="scene"]   { height:420px !important; }
-    [data-r="sec"]     { padding:66px 20px !important; }
-    [data-r="grid2"]   { grid-template-columns:1fr !important; gap:34px !important; }
-    [data-r="grid3"]   { grid-template-columns:1fr !important; }
-    [data-r="h2"]      { font-size:32px !important; }
-    [data-float]       { display:none !important; }
+    [data-r="nav"]       { padding:11px 16px !important; }
+    [data-navlink]       { display:none !important; }
+    [data-nav-cta]       { white-space:nowrap; font-size:12px !important; padding:9px 13px !important; }
+    [data-r="hero"]      { grid-template-columns:1fr !important; padding:104px 20px 50px !important; }
+    [data-r="herocopy"]  { margin-left:auto !important; margin-right:auto !important; }
+    [data-r="heroh1"]    { font-size:42px !important; }
+    [data-r="stats"]     { justify-content:flex-start !important; flex-wrap:nowrap !important; gap:16px !important; }
+    [data-stat-divider]  { display:none !important; }
+    [data-r="scene"]     { height:420px !important; }
+    [data-r="sec"]       { padding:66px 20px !important; }
+    [data-r="grid2"]     { grid-template-columns:1fr !important; gap:34px !important; }
+    [data-r="grid3"]     { grid-template-columns:1fr !important; }
+    [data-r="h2"]        { font-size:32px !important; }
+    [data-float]         { display:none !important; }
+    [data-visit-btns]    { flex-wrap:nowrap !important; }
+    [data-visit-btns] a  { flex:1; justify-content:center; font-size:13px !important; padding:12px 10px !important; }
   }
   @media (max-width:480px){
     [data-r="heroh1"]{ font-size:34px !important; }
     [data-r="scene"] { height:330px !important; }
+    [data-nav-cta]   { font-size:11px !important; padding:8px 10px !important; }
   }
 </style>
 </head>
@@ -52,7 +58,7 @@
 <header data-r="nav" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:14px 38px;backdrop-filter:blur(16px);background:rgba(11,40,25,0.72);border-bottom:1px solid rgba(232,189,90,0.22);">
   <a href="#top" style="display:flex;align-items:center;gap:13px;text-decoration:none;">
     <span style="display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fbf6e8;box-shadow:0 6px 18px rgba(0,0,0,0.35);overflow:hidden;">
-      <img src="assets/palange-logo.jpeg" alt="Palange" style="width:118%;height:118%;object-fit:cover;">
+      <img src="assets/palange-logo.jpeg" alt="Palange" fetchpriority="high" loading="eager" style="width:118%;height:118%;object-fit:cover;">
     </span>
     <span style="display:flex;flex-direction:column;line-height:1;">
       <span class="br-font" style="font-weight:800;font-size:18px;letter-spacing:0.5px;color:#fdf6e8;">PALANGE</span>
@@ -65,7 +71,7 @@
     <a href="#visit"    data-navlink data-i18n="nav_visit"    style="text-decoration:none;color:#e7efe8;font-size:14px;font-weight:600;opacity:.85;">Visit</a>
     <!-- language toggle injected here by JS -->
     <div id="lang-toggle" style="display:flex;align-items:center;background:rgba(255,255,255,0.08);border:1px solid rgba(233,189,90,0.4);border-radius:999px;padding:3px;"></div>
-    <a href="#contact" data-i18n="nav_cta" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:linear-gradient(135deg,#f0741e,#e9bd5a);color:#16241c;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px;box-shadow:0 8px 22px rgba(240,116,30,0.4);">Get Directions</a>
+    <a href="#contact" data-nav-cta data-i18n="nav_cta" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:linear-gradient(135deg,#f0741e,#e9bd5a);color:#16241c;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px;box-shadow:0 8px 22px rgba(240,116,30,0.4);">Get Directions</a>
   </nav>
 </header>
 
@@ -95,9 +101,9 @@
     </div>
     <div data-r="stats" style="display:flex;gap:30px;margin-top:40px;">
       <div><div id="stat-n1" class="br-font" style="font-weight:800;font-size:30px;color:#e9bd5a;">90+</div><div id="stat-l1" style="font-size:13px;color:#9fb6a6;font-weight:600;">Years of trust</div></div>
-      <div style="width:1px;background:rgba(255,255,255,0.14);"></div>
+      <div data-stat-divider style="width:1px;background:rgba(255,255,255,0.14);"></div>
       <div><div id="stat-n2" class="br-font" style="font-weight:800;font-size:30px;color:#e9bd5a;">3</div><div id="stat-l2" style="font-size:13px;color:#9fb6a6;font-weight:600;">Generations</div></div>
-      <div style="width:1px;background:rgba(255,255,255,0.14);"></div>
+      <div data-stat-divider style="width:1px;background:rgba(255,255,255,0.14);"></div>
       <div><div id="stat-n3" class="br-font" style="font-weight:800;font-size:30px;color:#e9bd5a;">1000s</div><div id="stat-l3" style="font-size:13px;color:#9fb6a6;font-weight:600;">Daily essentials</div></div>
     </div>
   </div>
@@ -196,7 +202,7 @@
           <span style="font-size:22px;flex:none;">&#128205;</span>
           <div>
             <div id="addr-label" style="font-weight:800;color:#134e2c;font-size:16px;">Address</div>
-            <div style="font-size:15px;color:#5a6c5f;line-height:1.5;"><span id="addr-l1">Palange Super Bazar, Main Market Road,</span><br><span id="addr-l2">[Area], [City] &mdash; [PIN]</span></div>
+            <div style="font-size:15px;color:#5a6c5f;line-height:1.5;"><span id="addr-l1">Palange Super Bazar, Bhavani Peth,</span><br><span id="addr-l2">Umbraj, Satara &mdash; 415109</span></div>
           </div>
         </div>
         <div style="display:flex;gap:16px;align-items:flex-start;">
@@ -207,7 +213,7 @@
           </div>
         </div>
       </div>
-      <div style="display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;">
+      <div data-visit-btns style="display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;">
         <a href="https://maps.app.goo.gl/UCrDcmpdbWrYkLVy8" target="_blank" rel="noopener" id="btn-maps" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:linear-gradient(135deg,#45b649,#1f7a4d);color:#fff;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 12px 26px rgba(31,122,77,0.35);">&#128205; Open in Maps</a>
         <a href="https://wa.me/918793838399" target="_blank" rel="noopener" id="btn-wa" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#fff;border:1.5px solid #1f7a4d;color:#1f7a4d;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;">&#128172; WhatsApp us</a>
       </div>
@@ -288,13 +294,13 @@ var L = {
     heritageCardSub:'Run by the third generation today',
     deptLabel:'WHAT WE STOCK', deptH1a:'Everything your home needs,', deptH1b:'under one roof.',
     visitLabel:'VISIT US', visitH1a:'Come say hello', visitH1b:'at the bazaar.',
-    addrLabel:'Address', addrL1:'Palange Super Bazar, Main Market Road,', addrL2:'[Area], [City] — [PIN]',
+    addrLabel:'Address', addrL1:'Palange Super Bazar, Bhavani Peth,', addrL2:'Umbraj, Satara — 415109',
     hoursLabel:'Store Hours',
     btnMaps:'&#128205; Open in Maps', btnWA:'&#128172; WhatsApp us',
     mapPill:'&#128205; Palange Super Bazar', mapNote:'',
     contactH1a:'Your family bazaar', contactH1b:'is just around the corner.',
     contactP:"Call ahead, message us, or simply walk in — we’re glad to help.",
-    cCall:'Call', cCallNum:'+91 87938 38399', cWA:'WhatsApp', cWANum:'+91 87938 38399', cDir:'Directions', cDirSub:'Umbraj, India',
+    cCall:'Call', cCallNum:'+91 87938 38399', cWA:'WhatsApp', cWANum:'+91 87938 38399', cDir:'Directions', cDirSub:'Umbraj, Satara',
     footerSub:'K M Palange &amp; Sons · Since 1930',
     footerRights:'© 1930–2026 Palange Super Bazar. All rights reserved.',
     timeline:[
@@ -322,7 +328,7 @@ var L = {
     heroP1:'किराणा, मसाले आणि घरगुती जीवनावश्यक वस्तू एकाच छताखाली — ',
     brand:'के एम पलंगे अँड सन्स', heroP2:' · तीन पिढ्यांचा विश्वास.',
     btnVisit:'दुकानाला भेट द्या →', btnBrowse:'विभाग पाहा',
-    statN1:'९४+', statL1:'विश्वासाची वर्षे', statN2:'३', statL2:'पिढ्या', statN3:'हजारो', statL3:'रोजच्या वस्तू',
+    statN1:'९४+', statL1:'विश्वासाची वर्षे', statN2:'३', statL2:'पिढ्या', statN3:'१०००', statL3:'रोजच्या वस्तू',
     chip1T:'रोजचा किराणा', chip1S:'पीठ · तांदूळ · तेल',
     chip2T:'सर्वोत्तम किंमती', chip2S:'दररोज',
     chip3T:'अखंड मसाले', chip3S:'ताजे व सुगंधी',
@@ -332,13 +338,13 @@ var L = {
     heritageCardSub:'आज तिसर्या पिढीकडून चालवला जातो',
     deptLabel:'आमच्याकडे काय आहे', deptH1a:'तुमच्या घराला हवं ते सर्व,', deptH1b:'एकाच छताखाली.',
     visitLabel:'आम्हाला भेट द्या', visitH1a:'बाजारात येउन', visitH1b:'आम्हाला भेटा.',
-    addrLabel:'पत्ता', addrL1:'पलंगे सुपर बाजार, मेन मार्केट रोड,', addrL2:'[परिसर], [शहर] — [पिन]',
+    addrLabel:'पत्ता', addrL1:'पलंगे सुपर बाजार, भवानी पेठ,', addrL2:'उंब्रज, सातारा — ४१५१०९',
     hoursLabel:'दुकानाच्या वेळा',
     btnMaps:'&#128205; नकाशावर पाहा', btnWA:'&#128172; व्हॉट्सअँप करा',
     mapPill:'&#128205; पलंगे सुपर बाजार', mapNote:'',
     contactH1a:'तुमचा कौटुंबिक बाजार', contactH1b:'अगदी जवळच आहे.',
     contactP:'फोन करा, संदेश पाठवा किंवा थेट या — आम्हाला मदत करायला आनंद होईल.',
-    cCall:'फोन', cCallNum:'+91 87938 38399', cWA:'व्हॉट्सअँप', cWANum:'+91 87938 38399', cDir:'दिशा', cDirSub:'उंब्रज, भारत',
+    cCall:'फोन', cCallNum:'+91 87938 38399', cWA:'व्हॉट्सअँप', cWANum:'+91 87938 38399', cDir:'दिशा', cDirSub:'उंब्रज, सातारा',
     footerSub:'के एम पलंगे अँड सन्स · १९३४ पासून',
     footerRights:'© १९३४–७४७६ पलंगे सुपर बाजार. सर्व हक्क राखीव.',
     timeline:[
